@@ -1,0 +1,6 @@
+function C = tensorXtensor(A, B)
+% provjera dimenzija
+% A = lx
+if ()
+end
+
