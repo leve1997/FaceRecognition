@@ -1,9 +1,10 @@
-function [  ] = T_SVD( L, J, k )
-% L = tensor(images are lateral slices)
-M = tensor_mean(L);
-A = StdDevTensor(L, M);
-[S, U1, U2, U3 ] = HOSVD( A )
-
-
+function [ U ] = T_SVD( M )
+% M = tensor(images are lateral slices)
+M = fft(M,[],3);
+%U = zeros(size(M,2),size(M,2),size(M,3));
+for i = 1:size(M,3);
+    [UU,~,~] = svd(M(:,:,i));
+    U(:,:,i) = UU;
 end
-
+U = ifft(U, [], 3);
+end

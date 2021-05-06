@@ -5,4 +5,3 @@ for j = 1:size(A,2)
 end
 M = M./size(A,2);
 end
-
