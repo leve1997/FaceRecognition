@@ -9,15 +9,7 @@ load dtest   % dzip(i) = j <=> i-stupac od A1 sadrzi znamenku j
 A1 = testzip ;
 D1 = dtest   ;
 
-[mA,nA] = size(A) ;
-[mA1,nA1] = size(A1) ;
-
-for i = 1 : nA 
-    TA(:,i,:) = reshape( A(:,i), 16, 16 ) ; 
+for k = 1:200
+    graf(k) = MatrixPCA(A, A1, k, D, D1);
 end
-for i = 1 : nA1
-    TA1(:,i,:) = reshape( A1(:,i), 16, 16 ) ; 
-end
-    
-ks = [4 6 13 7 4 7 6 2 4 6 4];
-FaceRecognition_tSVD1(TA, TA1, ks, D, D1);
+plot(graf);
