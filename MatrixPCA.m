@@ -30,7 +30,7 @@ for i = 1:size(J,2)
         correct = correct +1;
     end
 end
-rez = correct/size(J,2)
+rez = correct/size(J,2);
 
 end
 
