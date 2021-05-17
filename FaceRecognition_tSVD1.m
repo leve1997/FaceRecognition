@@ -6,7 +6,7 @@ function [ ] = FaceRecognition_tSVD1( TA, TJ, ks, exactTrain, exactTest )
 
 M = tensor_mean(TA);
 A = StdDevTensor(TA, M);
-U = T_SVD(TA);
+U = T_SVD(TA, 16);
 vec_Ut = {};
 vec_C = {};
 for i = 1:10
@@ -32,7 +32,6 @@ for i = 1:noTests
     if exactTest(i) == exactTrain(minInd)
         correct = correct + 1;
     end
-    i
 end
 disp(correct/noTests)
 

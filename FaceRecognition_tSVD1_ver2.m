@@ -1,14 +1,12 @@
-function [percentage] = FaceRecognition_tSVD1_ver2( TA, TJ, k, exactTrain, exactTest )
+function [percentage] = FaceRecognition_tSVD1_ver2( TA, TJ, k, exactTrain, exactTest, U )
 % Face recognition algorithm using t-SVD
 % T = tensor, J = test image, k = truncation index
 % minInd = index of most similiar image
 M = tensor_mean(TA);
 A = StdDevTensor(TA, M);
-%U = T_SVD(TA, k);
-%Ut = tensor_transpose( U );
-%QR
-U = tQR(TA);
+
 Ut = tensor_transpose( U(:,1:k,:) );
+
 C = tensorXtensor(Ut, A);
 noTests = size(TJ,2);
 correct = 0;

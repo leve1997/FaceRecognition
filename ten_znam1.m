@@ -19,5 +19,6 @@ for i = 1 : nA1
     TA1(:,i,:) = reshape( A1(:,i), 16, 16 ) ; 
 end
     
-ks = [4 6 13 7 4 7 6 2 4 6 4];
-FaceRecognition_tSVD1(TA, TA1, ks, D, D1);
+% ks = [4 6 13 7 4 7 6 2 4 6 4];
+% FaceRecognition_tSVD1(TA, TA1, ks, D, D1);
+FaceRecognition_tSVD2(TA, TA1, 10, D, D1);

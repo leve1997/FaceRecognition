@@ -23,9 +23,7 @@ for j = 17:17
             max_percentage = percentage;
             max_k = k;
         end
-        k
         plot_rez(k) = percentage;
     end
-    rez_matrix(j,:) = [max_k; max_percentage]
-    j
+    rez_matrix(j,:) = [max_k; max_percentage];
 end
