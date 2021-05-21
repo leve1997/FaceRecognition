@@ -4,4 +4,3 @@ function [Q] = tQR(A)
 [Qt,~,~] = qr(reshape(A,[d1*d2,d3]),0);
 Q = reshape(Qt,[d1,d2,d3]);
 end
-

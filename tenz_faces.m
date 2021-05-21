@@ -28,7 +28,7 @@ for j = 17:17
     end
     max_k = 0;
     max_percentage = 0;
-    for k = 34:100
+    for k = 1:30
         percentage = FaceRecognition_tSVD1_ver2( TA, TJ, k, gnd_Train, gnd_Test );
         if percentage > max_percentage
             max_percentage = percentage;
